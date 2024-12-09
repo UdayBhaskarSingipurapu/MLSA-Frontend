@@ -1,0 +1,36 @@
+
+.header {
+    background-color: #E4E2DD; 
+    height: 5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #34495e; 
+  }
+  
+  .nav-image {
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-btn {
+    font-size: 1.25rem;
+    color: #000000; 
+    background-color: transparent;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Button hover effect */
+  .nav-btn:hover {
+    background-color: #01070b; 
+    color: white;
+    transform: scale(1.05); 
+  }
+  
+
+  .nav-btn.active {
+    background-color: #2980b9;
+    color: white;
+  }
+  
