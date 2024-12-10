@@ -1,6 +1,15 @@
 import React from "react";
-
+import {useForm} from "react-hook-form"
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 function Signup() {
+  let {handleSubmit,register,formState:{errors}} = useForm()
+  let navigate = useNavigate()
+  let signup = (data) => {
+    axios.post("http://localhost:3000/users", data).then((res) => {
+      navigate("/login")
+    })
+  }
   return (
     <div
       className="card mx-auto mt-5 p-4 shadow"
@@ -15,7 +24,7 @@ function Signup() {
         <h3 className="text-center mb-4" style={{ color: "#333" }}>
           <u>Sign Up</u>
         </h3>
-        <form>
+        <form onSubmit={handleSubmit(signup)}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label" style={{ fontWeight: "bold" }}>
               Name
@@ -25,7 +34,7 @@ function Signup() {
               className="form-control"
               id="name"
               placeholder="Enter your name"
-              required
+              {...register("name", { required: true })}
             />
           </div>
           <div className="mb-3">
@@ -37,7 +46,7 @@ function Signup() {
               className="form-control"
               id="email"
               placeholder="Enter your email"
-              required
+              {...register("email", { required: true })}
             />
           </div>
           <div className="mb-3">
@@ -49,7 +58,7 @@ function Signup() {
               className="form-control"
               id="rollno"
               placeholder="Enter your roll number"
-              required
+              {...register("rollno", { required: true })}
             />
           </div>
           <div className="mb-3">
@@ -61,7 +70,7 @@ function Signup() {
               className="form-control"
               id="phone"
               placeholder="Enter your phone number"
-              required
+              {...register("phone", { required: true })}
             />
           </div>
           <div className="mb-3">
@@ -73,7 +82,7 @@ function Signup() {
               className="form-control"
               id="password"
               placeholder="Enter your password"
-              required
+              {...register("password", { required: true })}
             />
           </div>
           <div className="mb-4">
@@ -85,7 +94,7 @@ function Signup() {
               className="form-control"
               id="retypePassword"
               placeholder="Retype your password"
-              required
+              {...register("retypePassword", { required: true })}
             />
           </div>
           <button type="submit" className="btn btn-primary w-100">

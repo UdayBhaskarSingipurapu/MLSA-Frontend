@@ -6,6 +6,7 @@ import About from "./components/about/About.jsx";
 import Signup from "./components/pages/signup/Signup.jsx";
 import Login from "./components/pages/login/Login.jsx";
 import Mlsa from "./components/events/mlsa/Mlsa.jsx";
+import UserProfile from "./components/pages/profile/UserProfile.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ function App() {
           path: "/signup", 
           element: <Signup /> 
         },
+        {
+          path: "profile",
+          element: <UserProfile/>
+        }
       ],
     },
   ]);

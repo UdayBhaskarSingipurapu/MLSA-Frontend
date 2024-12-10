@@ -1,6 +1,18 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
+import {loginContext} from '../../../context/loginContext';
+import { useNavigate } from 'react-router-dom';
 function Login() {
+  let {handleSubmit,register,formState:{errors}} = useForm()
+  let navigate = useNavigate()
+  let {loginuser,err,status} = useContext(loginContext)
+  useEffect(() => {
+    if(status) navigate("/upcoming-events")
+  })
+  let makeLogin = (obj) => {
+    loginuser(obj)
+  }
   return (
     <div
       className="card mx-auto mt-5 p-4 shadow"
@@ -15,7 +27,8 @@ function Login() {
         <h3 className="text-center mb-4" style={{ color: "#333" }}>
           <u>Login</u>
         </h3>
-        <form>
+        <h5 className='text-danger text-center'>{err}</h5>
+        <form onSubmit={handleSubmit(makeLogin)}>
           <div className="mb-3">
             <label htmlFor="roll" className="form-label" style={{ fontWeight: "bold" }}>
               Roll Number
@@ -26,7 +39,7 @@ function Login() {
               id="roll"
               className="form-control"
               placeholder="Enter your roll number"
-              required
+              {...register("roll", {required:true})}
             />
           </div>
           <div className="mb-4">
@@ -39,7 +52,7 @@ function Login() {
               id="pass"
               className="form-control"
               placeholder="Enter your password"
-              required
+              {...register("pass", {required:true})}
             />
           </div>
           <button type="submit" className="btn btn-primary w-100">

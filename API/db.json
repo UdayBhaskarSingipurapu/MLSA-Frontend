@@ -1,1 +1,22 @@
-{}
+{
+  "users": [
+    {
+      "id": "1f62",
+      "name": "1",
+      "email": "1@gmail.com",
+      "rollno": "1",
+      "phone": "1",
+      "password": "1",
+      "retypePassword": "1"
+    },
+    {
+      "id": "d6ed",
+      "name": "2",
+      "email": "2@gmail.com",
+      "rollno": "2",
+      "phone": "2",
+      "password": "2",
+      "retypePassword": "2"
+    }
+  ]
+}
