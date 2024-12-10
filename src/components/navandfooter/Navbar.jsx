@@ -20,6 +20,12 @@ function Navbar() {
             >
               Home
             </button>
+            <button
+              className="nav-btn mx-3"
+              onClick={() => navigate('/upcoming-events')}
+            >
+              Upcoming Events
+            </button>
           </Col>
 
           {/* Right section with Navigation buttons */}
