@@ -20,6 +20,15 @@
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
   }
+  .pro-btn{
+    font-size: 1.7rem;
+    color: #000000; 
+    background-color: transparent;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
   
   /* Button hover effect */
   .nav-btn:hover {
@@ -27,7 +36,12 @@
     color: white;
     transform: scale(1.05); 
   }
-  
+  .pro-btn:hover {
+    background-color: #01070b; 
+    color: white;
+    transform: scale(1.05); 
+
+  }
 
   .nav-btn.active {
     background-color: #2980b9;

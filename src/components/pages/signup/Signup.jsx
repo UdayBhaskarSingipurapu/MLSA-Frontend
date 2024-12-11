@@ -27,7 +27,7 @@ function Signup() {
         <form onSubmit={handleSubmit(signup)}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label" style={{ fontWeight: "bold" }}>
-              Name
+              Name *
             </label>
             <input
               type="text"
@@ -39,7 +39,7 @@ function Signup() {
           </div>
           <div className="mb-3">
             <label htmlFor="email" className="form-label" style={{ fontWeight: "bold" }}>
-              Email
+              Email *
             </label>
             <input
               type="email"
@@ -51,7 +51,7 @@ function Signup() {
           </div>
           <div className="mb-3">
             <label htmlFor="rollno" className="form-label" style={{ fontWeight: "bold" }}>
-              Roll Number
+              Roll Number *
             </label>
             <input
               type="text"
@@ -63,7 +63,7 @@ function Signup() {
           </div>
           <div className="mb-3">
             <label htmlFor="phone" className="form-label" style={{ fontWeight: "bold" }}>
-              Phone Number
+              Phone Number *
             </label>
             <input
               type="text"
@@ -75,7 +75,7 @@ function Signup() {
           </div>
           <div className="mb-3">
             <label htmlFor="password" className="form-label" style={{ fontWeight: "bold" }}>
-              Password
+              Password *
             </label>
             <input
               type="password"
@@ -83,18 +83,6 @@ function Signup() {
               id="password"
               placeholder="Enter your password"
               {...register("password", { required: true })}
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="retypePassword" className="form-label" style={{ fontWeight: "bold" }}>
-              Retype Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="retypePassword"
-              placeholder="Retype your password"
-              {...register("retypePassword", { required: true })}
             />
           </div>
           <button type="submit" className="btn btn-primary w-100">

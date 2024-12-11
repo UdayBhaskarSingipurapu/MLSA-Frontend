@@ -8,7 +8,7 @@ function Login() {
   let navigate = useNavigate()
   let {loginuser,err,status} = useContext(loginContext)
   useEffect(() => {
-    if(status) navigate("/upcoming-events")
+    if(status) navigate("/")
   })
   let makeLogin = (obj) => {
     loginuser(obj)

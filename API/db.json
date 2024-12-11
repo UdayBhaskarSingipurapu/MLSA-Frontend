@@ -17,6 +17,31 @@
       "phone": "2",
       "password": "2",
       "retypePassword": "2"
+    },
+    {
+      "id": "3889",
+      "name": "hi",
+      "email": "hi@mail.com",
+      "rollno": "24",
+      "phone": "12233",
+      "password": "abc",
+      "retypePassword": "abc"
+    },
+    {
+      "id": "3e93",
+      "name": "Harsha",
+      "email": "harsha@mail.com",
+      "rollno": "22501a0626",
+      "phone": "8659741230",
+      "password": "harsha"
+    },
+    {
+      "id": "1c4a",
+      "name": "Vardhan",
+      "email": "Vardhan@mail.com",
+      "rollno": "22501a0627",
+      "phone": "7569832140",
+      "password": "vardhan"
     }
   ]
 }

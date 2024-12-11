@@ -5,6 +5,7 @@ import Logo from "../../assets/logo.jpg";
 import "./Navbar.css"; // Importing the CSS file
 import { useContext } from "react";
 import { loginContext } from "../../context/loginContext";
+import { CgProfile } from "react-icons/cg";
 function Navbar() {
   let { status, logoutuser } = useContext(loginContext);
   let navigate = useNavigate();
@@ -63,6 +64,9 @@ function Navbar() {
                 </button>
                 <button className="nav-btn mx-3" onClick={lgout}>
                   Logout
+                </button>
+                <button className="pro-btn" onClick={()=> navigate('/userprofile')}>
+                  <CgProfile />
                 </button>
               </div>
             )}
