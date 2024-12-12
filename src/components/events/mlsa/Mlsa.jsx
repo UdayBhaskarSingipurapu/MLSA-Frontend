@@ -2,6 +2,8 @@ import React from 'react'
 import './Mlsa.css';
 import { useContext } from 'react';
 import { loginContext } from '../../../context/loginContext';
+import aiImage from '../../../assets/ai.png';
+
 
 function Mlsa() {
   let {user,err,status} = useContext(loginContext)
@@ -19,7 +21,7 @@ function Mlsa() {
             <h2>Upcoming MLSA Events</h2>
             <div className="event">
               <div>
-                <img src="./images/ai1.jpg" alt="Tech Talk AI" />
+                <img src={aiImage} alt="Tech Talk AI" />
                 <div className="event-details">
                   <h3>Tech Talk: Future of AI</h3>
                   <p className="organizer">Organized by: MLSA</p>
@@ -37,7 +39,7 @@ function Mlsa() {
             </div>
             <div className="event">
               <div>
-                <img src="./images/webdevvvv.jpg" alt="Workshop on Web Development" />
+                <img src="https://media.licdn.com/dms/image/v2/D4D22AQGPzyOIL6Keww/feedshare-shrink_800/feedshare-shrink_800/0/1694674135932?e=2147483647&v=beta&t=D35jzcI56mDZmroiMDXUHVxgLcwlI6lph9pkreeFVZg" alt="Workshop on Web Development"  className='w-50'/>
                 <div className="event-details">
                   <h3>Workshop on Web Development</h3>
                   <p className="organizer">Organized by: MLSA</p>

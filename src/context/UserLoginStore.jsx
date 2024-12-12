@@ -5,7 +5,11 @@ import axios from "axios";
 function LoginStore({ children }) {
   let [status, setStatus] = useState(false);
   let [err, setErr] = useState("");
-  let [user, setUser] = useState(null);
+  let user = sessionStorage.getItem("user");
+  useEffect(() => {
+    if (user === null) setStatus(false);
+    else setStatus(true);
+  }, [user]);
   const loginuser = async (data) => {
     await axios
       .get(`http://localhost:3000/users?rollno=${data.roll}`)
@@ -13,27 +17,26 @@ function LoginStore({ children }) {
         if (res.data.length === 0) {
           setErr("User not found");
           return;
-        }
-        else if (res.data[0].password != data.pass) {
+        } else if (res.data[0].password != data.pass) {
           setErr("Wrong Password");
           return;
+        } else {
+          sessionStorage.setItem("user", JSON.stringify(res.data[0]));
+          setErr("");
+          setStatus(true);
         }
-        else{
-            setUser(res.data[0]);
-            setErr("");
-            setStatus(true);
-        }
-      }).catch((err) => {
+      })
+      .catch((err) => {
         console.log(err);
       });
   };
   const logoutuser = () => {
-    setUser(null);
     setStatus(false);
+    sessionStorage.removeItem("user");
   };
   return (
     <loginContext.Provider
-      value={{ loginuser, logoutuser, status, setStatus, err, setErr , user }}
+      value={{ loginuser, logoutuser, status, setStatus, err, setErr }}
     >
       {children}
     </loginContext.Provider>
